@@ -9,6 +9,10 @@ const userRoute =require('../routes/userRoute')
 const bookingsRoute= require('../routes/bookingsRoute')
 const port = process.env.PORT || 5000;
 
+// Add the root route
+app.get('/', (req, res) => {
+    res.send('API is running...');
+});
 app.use(cors());
 app.use('/api/rooms', roomRoute);
 app.use('/api/users' , userRoute);
